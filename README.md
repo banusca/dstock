@@ -1,0 +1,2 @@
+# dstock
+Stock optimisation software
