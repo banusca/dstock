@@ -1,0 +1,11 @@
+Store, Product, Stock, Optim, Type
+Paris, Apples, 7, 9,Fast
+Paris, Corn, 0, 4,Medium
+Paris, Sugar, 4, 4,Slow
+Paris, Gems, 2, 0,Inactive
+Paris, Roses, 6, 4,Special
+Bucuresti, Apples, 17, 3,Fast
+Bucuresti, Corn, 6, 2,Medium
+Bucuresti, Sugar, 4, 4,Slow
+Bucuresti, Gems, 3, 0,Inactive
+Bucuresti, Roses, 5, 2,Special

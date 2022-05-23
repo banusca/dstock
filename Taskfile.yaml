@@ -1,0 +1,14 @@
+# https://taskfile.dev
+
+version: "3"
+
+tasks:
+    build:
+        desc: Build the app
+        cmds:
+        - go build -o bin/dstock-cli main.go 
+
+    clean:
+        desc: Remove all files including optimisations
+        cmds:
+        - rm -rf bin
