@@ -2,7 +2,6 @@ package opti
 
 import (
 	"sync"
-	"time"
 
 	log "github.com/sirupsen/logrus"
 	"gitlab.com/banusca/dstock/stockparser"
@@ -89,7 +88,6 @@ func RunOpti(stock stockparser.StockMatrix, settings Settings, progress chan<- i
 						go func(store1 string, store2 string) {
 							//log.Debugf("Store1 %s to Store2 %s", store1, store2)
 							transfersList <- doExchangeItems(mystock, settings, store1, store2, false)
-							defer wg.Done()
 						}(store1, store2)
 					}
 				}
@@ -102,11 +100,9 @@ func RunOpti(stock stockparser.StockMatrix, settings Settings, progress chan<- i
 				if transfer.TotaItemsCount >= minProducts {
 					optimalTransferFound = determineBestTransfer(optimalTransferFound, transfer, []float64{0.99, 0.01})
 				}
+				wg.Done()
 			}
 		}()
-
-		// fix for too fast optimisation
-		time.Sleep(2 * time.Microsecond)
 
 		// wait for all rutines to finish
 		wg.Wait()
