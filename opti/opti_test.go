@@ -7,8 +7,8 @@ import (
 )
 
 func TestOptiSuccess(t *testing.T) {
-	// init test
 
+	// init test
 	stock := stockparser.StockMatrix{
 		"Paris": {
 			"Apples": {Has: 7, Needs: 9},
